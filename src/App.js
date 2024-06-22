@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Player from './components/Player';
+import A from './components/PracProps/A';
+import { TodoList } from './components/TodoList';
+import ListPrac from './components/ListPrac';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/RoutingExample/Layout';
+import Home from './components/RoutingExample/Home';
+import About from './components/RoutingExample/About';
+import Contact from './components/RoutingExample/Contact';
+import HookPrac from './components/HooksPrac/HookPrac';
+import AddEmp from './components/RoutingExample/AddEmp';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="text-center">
+      {/* <TodoList /> */}
+      {/* <A /> */}
+      {/* <Player /> */}
+      {/* <ListPrac name="kishor">
+          <h1>Vaibhavi bodke</h1>
+      </ListPrac> */}
+
+      <BrowserRouter>
+      <Layout />
+      <Routes>
+        <Route path='/home' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/hooks' element={<HookPrac />} />
+        <Route path='/add-emp' element={<AddEmp />} />
+      </Routes>
+      
+      </BrowserRouter>
     </div>
   );
 }

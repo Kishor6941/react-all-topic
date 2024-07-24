@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import MyContext from './components/RoutingExample/context/UserContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+let user = {
+  name : "Vaibhavi"
+}
 root.render(
   <React.StrictMode>
+    <MyContext.Provider value={user}>
     <App />
+    </MyContext.Provider>
   </React.StrictMode>
 );
 

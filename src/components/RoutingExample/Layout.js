@@ -6,21 +6,24 @@ const Layout = () => {
     <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <ul className="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <Link to="/home">Home</Link>
-                    </li> &nbsp; &nbsp;
-                <li class="nav-item">
-                <Link to="/about">About US</Link>
-                    </li> &nbsp; &nbsp;
-                <li class="nav-item">
-                <Link to="/contact">Contact US</Link>
-                </li>&nbsp; &nbsp;
-                <li class="nav-item">
-                <Link to="/hooks">Hook Prac</Link>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/home">Home</Link>
+                    </li> 
+                <li className="nav-item">
+                <Link className="nav-link" to="/about">About US</Link>
+                    </li> 
+                <li className="nav-item">
+                <Link className="nav-link" to="/contact">Contact US</Link>
                 </li>
-                &nbsp; &nbsp;
-                <li class="nav-item">
-                <Link to="/add-emp">Add emp</Link>
+                <li className="nav-item">
+                <Link className="nav-link" to="/hooks">Hook Prac</Link>
+                </li>
+                
+                <li className="nav-item">
+                <Link className="nav-link" to="/add-emp">Add emp</Link>
+                </li>
+                <li className="nav-item">
+                <Link className="nav-link" to="/reducer">Use Reducer</Link>
                 </li>
             </ul>
         </nav>

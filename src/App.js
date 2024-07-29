@@ -10,6 +10,7 @@ import About from './components/RoutingExample/About';
 import Contact from './components/RoutingExample/Contact';
 import HookPrac from './components/HooksPrac/HookPrac';
 import AddEmp from './components/RoutingExample/AddEmp';
+import ReducerHook from './components/HooksPrac/ReducerHook';
 function App() {
   return (
     <div className="text-center">
@@ -28,6 +29,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/hooks' element={<HookPrac />} />
         <Route path='/add-emp' element={<AddEmp />} />
+        <Route path='/reducer' element={<ReducerHook />} />
       </Routes>
       
       </BrowserRouter>

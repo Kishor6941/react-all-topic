@@ -11,6 +11,7 @@ import Contact from './components/RoutingExample/Contact';
 import HookPrac from './components/HooksPrac/HookPrac';
 import AddEmp from './components/RoutingExample/AddEmp';
 import ReducerHook from './components/HooksPrac/ReducerHook';
+import HandleForm from './components/HandleForm';
 function App() {
   return (
     <div className="text-center">
@@ -30,6 +31,7 @@ function App() {
         <Route path='/hooks' element={<HookPrac />} />
         <Route path='/add-emp' element={<AddEmp />} />
         <Route path='/reducer' element={<ReducerHook />} />
+        <Route path='/handle-form' element={<HandleForm />} />
       </Routes>
       
       </BrowserRouter>

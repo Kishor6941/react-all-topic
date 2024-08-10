@@ -25,6 +25,9 @@ const Layout = () => {
                 <li className="nav-item">
                 <Link className="nav-link" to="/reducer">Use Reducer</Link>
                 </li>
+                <li className="nav-item">
+                <Link className="nav-link" to="/handle-form">Handle Form </Link>
+                </li>
             </ul>
         </nav>
     </div>

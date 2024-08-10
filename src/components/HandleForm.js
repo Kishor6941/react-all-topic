@@ -1,22 +1,29 @@
 import React from "react";
 import "./HandleForm.module.css";
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
 const HandleForm = () => {
   const form = useForm({
-    defaultValues : {
-        username : '',
-        email : '',
-        channel : '',
-        social : {
-            facebook : '',
-            linkedin : ''
-        }
-    }
+    defaultValues: {
+      username: "",
+      email: "",
+      channel: "",
+      social: {
+        facebook: "",
+        linkedin: "",
+      },
+      phoneNumbers: ["", ""],
+      Hobbies: [{ hobby: "" }],
+    },
   });
   const { register, control, handleSubmit, formState } = form;
   const { errors } = formState;
+
+  const { fields, append, remove } = useFieldArray({
+    name: "Hobbies",
+    control,
+  });
 
   const onSubmit = (data) => {
     console.log("Form Submitted", data);
@@ -89,6 +96,56 @@ const HandleForm = () => {
             className="form-control"
             {...register("social.linkedin")}
           />
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Primary PhoneNumber</label>
+          <input
+            type="text"
+            className="form-control"
+            {...register("phoneNumbers.0")}
+          />
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Secondary PhoneNumber</label>
+          <input
+            type="text"
+            className="form-control"
+            {...register("phoneNumbers.1")}
+          />
+        </div>
+
+        <div>
+          <label>List of Hobbies</label>
+          <div>
+            {fields.map((hobby, index) => {
+              return (
+                <div className="mb-2" key={hobby?.id}>
+                  <input
+                    className="form-control"
+                    type="text"
+                    {...register(`Hobbies.${index}.hobby`)}
+                  />
+                  {index > 0 && (
+                    <button
+                      className="btn btn-danger mt-2"
+                      onClick={() => remove(index)}
+                    >
+                      Remove Hobbies
+                    </button>
+                  )}
+                </div>
+              );
+            })}
+            <button
+              className="btn btn-success mb-2"
+              onClick={() => append({ hobby: "" })}
+            >
+              {" "}
+              Add Hobbies
+            </button>
+          </div>
         </div>
 
         <button type="submit" className="btn btn-primary">

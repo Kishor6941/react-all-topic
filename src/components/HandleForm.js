@@ -4,7 +4,17 @@ import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
 const HandleForm = () => {
-  const form = useForm();
+  const form = useForm({
+    defaultValues : {
+        username : '',
+        email : '',
+        channel : '',
+        social : {
+            facebook : '',
+            linkedin : ''
+        }
+    }
+  });
   const { register, control, handleSubmit, formState } = form;
   const { errors } = formState;
 
@@ -61,6 +71,24 @@ const HandleForm = () => {
             })}
           />
           <p className="text-danger">{errors?.channel?.message}</p>
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Facebook</label>
+          <input
+            type="text"
+            className="form-control"
+            {...register("social.facebook")}
+          />
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Linkedin</label>
+          <input
+            type="text"
+            className="form-control"
+            {...register("social.linkedin")}
+          />
         </div>
 
         <button type="submit" className="btn btn-primary">

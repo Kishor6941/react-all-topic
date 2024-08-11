@@ -3,13 +3,13 @@ import { Component } from "react";
 class AddEmp extends Component {
   constructor() {
     super();
-    this.state ={
-     id: "",
+    this.state = {
+      id: "",
       employeeName: "",
       designation: "",
       experience: "",
-      empList :[]
-     }
+      empList: [],
+    };
   }
   ChangeId = (id) => {
     this.setState({
@@ -34,16 +34,20 @@ class AddEmp extends Component {
   Submit = (event) => {
     event.preventDefault();
     let a = {
-        id : this.state.id,
-        employeeName : this.state?.employeeName,
-        designation : this.state?.designation,
-        experience : this.state?.experience
-    }
+      id: this.state.id,
+      employeeName: this.state?.employeeName,
+      designation: this.state?.designation,
+      experience: this.state?.experience,
+    };
     this.setState({
-        empList:[...this.state?.empList,a]
-    })
-    document.getElementById("exampleModal").classList.remove("show", "d-block", "modal-open");  
-        document.getElementsByClassName("modal-backdrop")[0].classList.remove("modal-backdrop");
+      empList: [...this.state?.empList, a],
+    });
+    document
+      .getElementById("exampleModal")
+      .classList.remove("show", "d-block", "modal-open");
+    document
+      .getElementsByClassName("modal-backdrop")[0]
+      .classList.remove("modal-backdrop");
   };
   render() {
     return (

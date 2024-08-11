@@ -25,7 +25,7 @@ const HandleForm = () => {
     control,
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (data) => {  
     console.log("Form Submitted", data);
   };
   return (

@@ -12,6 +12,7 @@ import HookPrac from './components/HooksPrac/HookPrac';
 import AddEmp from './components/RoutingExample/AddEmp';
 import ReducerHook from './components/HooksPrac/ReducerHook';
 import HandleForm from './components/HandleForm';
+import ParentC from './components/useCallback/ParentC';
 function App() {
   return (
     <div className="text-center">
@@ -32,6 +33,7 @@ function App() {
         <Route path='/add-emp' element={<AddEmp />} />
         <Route path='/reducer' element={<ReducerHook />} />
         <Route path='/handle-form' element={<HandleForm />} />
+        <Route path='/usecallback' element={<ParentC />} />
       </Routes>
       
       </BrowserRouter>
